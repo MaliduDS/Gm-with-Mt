@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malidu Theekshana | Player Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Gaming & Tech Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scanline Overlay Effect -->
+    <div class="scanlines"></div>
+
+    <!-- HUD Navigation -->
+    <nav class="hud-nav">
+        <div class="logo">PLAYER_<span>01</span></div>
+        <ul class="nav-links">
+            <li><a href="#nexus">Nexus</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#quests">Quest Log</a></li>
+            <li><a href="#coop">Co-Op</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero / Nexus Section -->
+    <section id="nexus" class="nexus-section">
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="btn-red"></span>
+                <span class="btn-yellow"></span>
+                <span class="btn-green"></span>
+                <span class="title">system_boot.exe</span>
+            </div>
+            <div class="terminal-body">
+                <p id="typewriter"></p>
+                <h1 class="glitch" data-text="MALIDU THEEKSHANA">MALIDU THEEKSHANA</h1>
+                <h2 class="class-title">Class: Front-End Mage & Backend Brawler</h2>
+                <a href="#quests" class="cyber-btn">START_CAMPAIGN <i class="fas fa-play"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Skills Section -->
+    <section id="stats" class="stats-section">
+        <h2 class="section-title">> PLAYER_STATS</h2>
+        <div class="stats-container">
+            <div class="stat-row">
+                <span class="stat-name">HTML5 / CSS3 [HP]</span>
+                <div class="xp-bar hp-bar"><div class="fill" style="width: 95%;"></div></div>
+                <span class="stat-val">LVL 95</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-name">JavaScript [MP]</span>
+                <div class="xp-bar mp-bar"><div class="fill" style="width: 85%;"></div></div>
+                <span class="stat-val">LVL 85</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-name">React.js [AGI]</span>
+                <div class="xp-bar agi-bar"><div class="fill" style="width: 80%;"></div></div>
+                <span class="stat-val">LVL 80</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-name">Node.js [STR]</span>
+                <div class="xp-bar str-bar"><div class="fill" style="width: 75%;"></div></div>
+                <span class="stat-val">LVL 75</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quests / Projects Section -->
+    <section id="quests" class="quests-section">
+        <h2 class="section-title">> QUEST_LOG</h2>
+        <div class="inventory-grid">
+            
+            <!-- Item/Project 1 -->
+            <div class="inventory-slot">
+                <div class="item-img" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="item-details">
+                    <h3>FPS Leaderboard API</h3>
+                    <p>Rank tracking system for competitive shooters.</p>
+                    <div class="loot-tags">
+                        <span>MongoDB</span><span>Node.js</span>
+                    </div>
+                    <button class="cyber-btn-sm" onclick="equipItem()">Equip</button>
+                </div>
+            </div>
+
+            <!-- Item/Project 2 -->
+            <div class="inventory-slot">
+                <div class="item-img" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="item-details">
+                    <h3>Guild Chat App</h3>
+                    <p>Real-time websocket chat for raiding parties.</p>
+                    <div class="loot-tags">
+                        <span>React</span><span>Socket.io</span>
+                    </div>
+                    <button class="cyber-btn-sm" onclick="equipItem()">Equip</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Co-op / Contact Section -->
+    <section id="coop" class="coop-section">
+        <h2 class="section-title">> INITIATE_CO-OP</h2>
+        <form id="comm-link" class="comm-form">
+            <div class="input-group">
+                <label>GAMERTAG (NAME)</label>
+                <input type="text" required>
+            </div>
+            <div class="input-group">
+                <label>COMMS LINK (EMAIL)</label>
+                <input type="email" required>
+            </div>
+            <div class="input-group">
+                <label>TRANSMISSION</label>
+                <textarea rows="4" required></textarea>
+            </div>
+            <button type="submit" class="cyber-btn">SEND_TRANSMISSION</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>SYSTEM_HALTED. &copy; 2026 Malidu Theekshana.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>:root {
+    --bg-dark: #050510;
+    --neon-cyan: #0ff;
+    --neon-pink: #f0f;
+    --hud-green: #39ff14;
+    --terminal-bg: rgba(10, 20, 30, 0.8);
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Share Tech Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Scanline Effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* HUD Navigation */
+.hud-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    background: rgba(5, 5, 16, 0.9);
+    border-bottom: 2px solid var(--neon-cyan);
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.logo span {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Sections */
+section {
+    padding: 6rem 5% 4rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--neon-cyan);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    border-bottom: 1px dashed var(--neon-cyan);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Nexus (Hero) Terminal */
+.nexus-section {
+    align-items: center;
+}
+
+.terminal-box {
+    width: 100%;
+    max-width: 800px;
+    background: var(--terminal-bg);
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.terminal-header {
+    background: #111;
+    padding: 10px;
+    border-bottom: 2px solid var(--neon-cyan);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal-header span[class^="btn-"] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.btn-red { background: #ff5f56; }
+.btn-yellow { background: #ffbd2e; }
+.btn-green { background: #27c93f; }
+.title { margin-left: 15px; color: #aaa; }
+
+.terminal-body {
+    padding: 3rem;
+    text-align: center;
+}
+
+#typewriter {
+    color: var(--hud-green);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    height: 24px; /* prevents layout shift */
+}
+
+/* Glitch Text */
+.glitch {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 900;
+    color: #fff;
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75); }
+    14% { text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75); }
+    15% { text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75); }
+    49% { text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75); }
+    50% { text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75); }
+    99% { text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75); }
+    100% { text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em -0.05em 0 rgba(0, 0, 255, 0.75); }
+}
+
+.class-title {
+    color: var(--neon-pink);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Cyber Buttons */
+.cyber-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: transparent;
+    color: var(--neon-cyan);
+    border: 2px solid var(--neon-cyan);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.cyber-btn:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.cyber-btn-sm {
+    padding: 8px 15px;
+    background: var(--neon-pink);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cyber-btn-sm:hover {
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* Stats (Skills) */
+.stats-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.stat-name {
+    width: 150px;
+    color: #fff;
+}
+
+.xp-bar {
+    flex: 1;
+    height: 20px;
+    background: #111;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.xp-bar .fill {
+    height: 100%;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.hp-bar .fill { background: #ff3333; color: #ff3333; }
+.mp-bar .fill { background: #3333ff; color: #3333ff; }
+.agi-bar .fill { background: #33ff33; color: #33ff33; }
+.str-bar .fill { background: #ffff33; color: #ffff33; }
+
+.stat-val {
+    width: 60px;
+    text-align: right;
+    color: var(--neon-cyan);
+}
+
+/* Inventory (Projects) */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.inventory-slot {
+    background: var(--terminal-bg);
+    border: 1px solid #333;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.inventory-slot:hover {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    transform: scale(1.02);
+}
+
+.item-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid #333;
+}
+
+.item-details {
+    padding: 1rem 0;
+}
+
+.item-details h3 {
+    color: var(--neon-cyan);
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+}
+
+.item-details p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.loot-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.loot-tags span {
+    background: #222;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    color: var(--hud-green);
+    border: 1px solid var(--hud-green);
+}
+
+/* Co-op (Contact) */
+.comm-form {
+    max-width: 600px;
+    background: var(--terminal-bg);
+    padding: 2rem;
+    border: 1px solid var(--neon-cyan);
+    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    color: var(--neon-cyan);
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px;
+    font-family: var(--font-body);
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #555;
+    border-top: 1px solid #111;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .glitch { font-size: 2.5rem; }
+    .stat-row { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .stat-name, .stat-val { width: auto; }
+    .xp-bar { width: 100%; }
+}document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Terminal Bootup Typewriter Effect
+    const typeTarget = document.getElementById('typewriter');
+    const bootSequence = [
+        "Connecting to server...",
+        "Bypassing mainframe security...",
+        "Access granted.",
+        "Loading Player Data: Malidu Theekshana..."
+    ];
+    
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentLine = "";
+    
+    function typeConsole() {
+        if (lineIndex < bootSequence.length) {
+            currentLine = bootSequence[lineIndex];
+            
+            if (charIndex < currentLine.length) {
+                typeTarget.innerHTML = currentLine.substring(0, charIndex + 1) + "<span style='background:#39ff14; color:#000;'>_</span>";
+                charIndex++;
+                setTimeout(typeConsole, 40); // Typing speed
+            } else {
+                // Line finished, wait a bit then move to next line
+                setTimeout(() => {
+                    charIndex = 0;
+                    lineIndex++;
+                    typeConsole();
+                }, 800); // Delay between lines
+            }
+        } else {
+            // Finished typing sequence
+            typeTarget.innerHTML = "Status: <span style='color:#39ff14;'>ONLINE</span>";
+        }
+    }
+    
+    // Start typing effect 500ms after load
+    setTimeout(typeConsole, 500);
+
+
+    // 2. Co-op Form Transmission Event
+    const commForm = document.getElementById('comm-link');
+    if(commForm) {
+        commForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = commForm.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "TRANSMITTING...";
+            btn.style.backgroundColor = "var(--neon-pink)";
+            btn.style.color = "#fff";
+            btn.style.boxShadow = "0 0 20px var(--neon-pink)";
+            
+            setTimeout(() => {
+                alert("Transmission received! Malidu will sync with you shortly.");
+                commForm.reset();
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "transparent";
+                btn.style.color = "var(--neon-cyan)";
+                btn.style.boxShadow = "inset 0 0 10px rgba(0, 255, 255, 0.2)";
+            }, 1500);
+        });
+    }
+});
+
+// 3. Equip Item (Inventory interaction)
+function equipItem() {
+    alert("Project details loading into main memory... (Link to project page or open modal)");
+}
